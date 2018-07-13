@@ -254,6 +254,39 @@ app.on("connected", () => {
 /////////////////////////////////////////////////
 // ## UPDATE
 
+
+// 1. Update 'Guy Man' to have a gender of 'f'
+// Vampires.findOneAndUpdate({name:"Guy Man"}, {$set:{gender:"f"}}, {new:true}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
+// 2. Update 'Eve' to have a gender of 'm'
+// Vampires.findOneAndUpdate({name:"Eve"}, {$set:{gender:"m"}}, {new:true}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
+// 3. Update 'Guy Man' to have an array called 'hates' that includes 'clothes' and 'jobs'
+// Vampires.findOneAndUpdate({name:"Guy Man"}, {$set:{hates:["clothes","jobs"]}}, {new:true}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
+// 4. Update 'Guy Man's' hates array also to include 'alarm clocks' and 'jackalopes'
+// Vampires.findOneAndUpdate({name:"Guy Man"}, {$push:{hates:["clothes","jobs"]}}, {new:true}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
+
+// 5. Rename 'Eve's' name field to 'moniker'
+// Vampires.findOneAndUpdate({name:"Eve"}, {$rename:{"name" : "moniker"}}, {new:true}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
+// 6. We now no longer want to categorize female gender as "f", but rather as fems. Update all females so that the they are of gender "fems".
+Vampires.updateMany({gender:"f"}, {$set:{gender: "fems"}}, {new:true}, (err, response) => {
+	console.log(response);
+	app.close()
+})
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
