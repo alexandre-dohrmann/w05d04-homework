@@ -28,62 +28,62 @@ app.on("connected", () => {
 // 	mongoose.connection.close();
 // });
 
-### Add some new vampire data
-Vampires.create (
-	{
-	  name: "Alex",
-	  hair_color: "Dark Brown",
-	  eye_color: "Green",
-	  dob: "06/19/1985",
-	  loves: ["Music", "Running", "WebDev"],
-	  location: "Denver, Colorado",
-	  gender: "m",
-	  victims: 50,
-	}, (err, resCreate) => {
-		if(err){
-			console.log(err);
-		} else {
-			console.log(resCreate);
-		}
-	});
+// ### Add some new vampire data
+// Vampires.create (
+// 	{
+// 	  name: "Alex",
+// 	  hair_color: "Dark Brown",
+// 	  eye_color: "Green",
+// 	  dob: "06/19/1985",
+// 	  loves: ["Music", "Running", "WebDev"],
+// 	  location: "Denver, Colorado",
+// 	  gender: "m",
+// 	  victims: 50,
+// 	}, (err, resCreate) => {
+// 		if(err){
+// 			console.log(err);
+// 		} else {
+// 			console.log(resCreate);
+// 		}
+// 	});
 
-Vampires.create (
-	{
-	  name: "Bob Barker",
-	  hair_color: "White",
-	  eye_color: "Blue",
-	  dob: "12/12/1923",
-	  loves: ["Price Is Right", "Women", "Money"],
-	  location: "Los Angeles, California",
-	  gender: "m",
-	  victims: 94,
-	},
-	{
-	  name: "Joan Rivers",
-	  hair_color: "Salt & Pepper",
-	  eye_color: "Brown",
-	  dob: "06/08/1933",
-	  loves: ["Fashion", "Comedy", "Insults"],
-	  location: "Brooklyn, New York",
-	  gender: "f",
-	  victims: 81,
-	},
-	{
-	  name: "Whitney Houston",
-	  hair_color: "Black",
-	  eye_color: "Dark Brown",
-	  dob: "08/09/1963",
-	  loves: ["Singing", "Bobby Brown", "Cocaine"],
-	  location: "Beverly Hills, California",
-	  gender: "f",
-	  victims: 48,
-	}, (err, resCreate) => {
-		if(err){
-			console.log(err);
-		} else {
-			console.log(resCreate);
-		}
-});
+// Vampires.create (
+// 	{
+// 	  name: "Bob Barker",
+// 	  hair_color: "White",
+// 	  eye_color: "Blue",
+// 	  dob: "12/12/1923",
+// 	  loves: ["Price Is Right", "Women", "Money"],
+// 	  location: "Los Angeles, California",
+// 	  gender: "m",
+// 	  victims: 94,
+// 	},
+// 	{
+// 	  name: "Joan Rivers",
+// 	  hair_color: "Salt & Pepper",
+// 	  eye_color: "Brown",
+// 	  dob: "06/08/1933",
+// 	  loves: ["Fashion", "Comedy", "Insults"],
+// 	  location: "Brooklyn, New York",
+// 	  gender: "f",
+// 	  victims: 81,
+// 	},
+// 	{
+// 	  name: "Whitney Houston",
+// 	  hair_color: "Black",
+// 	  eye_color: "Dark Brown",
+// 	  dob: "08/09/1963",
+// 	  loves: ["Singing", "Bobby Brown", "Cocaine"],
+// 	  location: "Beverly Hills, California",
+// 	  gender: "f",
+// 	  victims: 48,
+// 	}, (err, resCreate) => {
+// 		if(err){
+// 			console.log(err);
+// 		} else {
+// 			console.log(resCreate);
+// 		}
+// });
 
 /////////////////////////////////////////////////
 // ## QUERYING
@@ -92,30 +92,30 @@ Vampires.create (
 
 // 1. Find all the vampires that that are females
 
-// Vampires.find({gender:"f"}, (err, response) => {
-// 	console.log(response); 
-// });
+Vampires.find({gender:"f"}, (err, response) => {
+	console.log(response); 
+});
 
 // 2. Have greater than 500 victims
 
-// Vampires.find({victims:{$gt:500}}, (err, response) => {
-// 	console.log(response);
-// });
+Vampires.find({victims:{$gt:500}}, (err, response) => {
+	console.log(response);
+});
 
 // 3. Have fewer than or equal to 150 victims
-// Vampires.find({victims:{$lte:150}}, (err, response) => {
-// 	console.log(response);
-// });
+Vampires.find({victims:{$lte:150}}, (err, response) => {
+	console.log(response);
+});
 
 // 4.  Have a victim count is not equal to 210234
-// Vampires.find({victims:{$ne:210234}}, (err, response) => {
-// 	console.log(response);
-// });
+Vampires.find({victims:{$ne:210234}}, (err, response) => {
+	console.log(response);
+});
 
 // 5. Have greater than 150 AND fewer than 500 victims
-// Vampires.find({victims:{$gt:150, $lt:500}}, (err, response) => {
-// 	console.log(response);
-// })
+Vampires.find({victims:{$gt:150, $lt:500}}, (err, response) => {
+	console.log(response);
+})
 
 
 /////////////////////////////////////////////////
