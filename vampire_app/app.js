@@ -282,14 +282,25 @@ app.on("connected", () => {
 // 	app.close()
 // })
 // 6. We now no longer want to categorize female gender as "f", but rather as fems. Update all females so that the they are of gender "fems".
-Vampires.updateMany({gender:"f"}, {$set:{gender: "fems"}}, {new:true}, (err, response) => {
-	console.log(response);
-	app.close()
-})
+// Vampires.updateMany({gender:"f"}, {$set:{gender: "fems"}}, {new:true}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REMOVE
+// 1. Remove a single document wherein the hair_color is 'brown'
+// Vampires.findOneAndRemove({hair_color:"brown"}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// })
+// 2. We found out that the vampires with the blue eyes were just fakes! Let's remove all the vampires who have blue eyes from our database.
+// Vampires.deleteMany({eye_color:"blue"}, (err, response) => {
+// 	console.log(response);
+// 	app.close()
+// });
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
