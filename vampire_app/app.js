@@ -239,6 +239,16 @@ app.on("connected", () => {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
+// 1. Replace the vampire called 'Claudia' with a vampire called 'Eve'. 'Eve' will have a key called 'portrayed_by' with the value 'Tilda Swinton'
+// Vampires.findOneAndUpdate({name:"Claudia"}, {$set:{name:"Eve", portrayed_by:"Tilda Swinton"}}, {new:true}, (err, response)=> {
+// 	console.log(response);
+// 	app.close();
+// })
+// 2. Replace the first male vampire with another whose name is 'Guy Man', and who has a key 'is_actually' with the value 'were-lizard'
+// Vampires.findOneAndUpdate({gender:"m"}, {$set:{name:"Guy Man", is_actually:"were-lizard"}}, {new:true}, (err, response)=> {
+// 	console.log(response);
+// 	app.close();
+// })
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////

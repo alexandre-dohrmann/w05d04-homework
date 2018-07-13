@@ -10,6 +10,9 @@ const vampireSchema = new Schema ({
 	  location: { type: String},
 	  gender: { type: String},
 	  victims: { type: Number, min: 0},
+	  portrayed_by: {type: String},
+	  is_actually: {type: String},
+	  hates: [String],
 });
 
 const Vampires = mongoose.model('Vampires', vampireSchema);
