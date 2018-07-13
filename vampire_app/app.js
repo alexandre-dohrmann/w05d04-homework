@@ -92,34 +92,53 @@ app.on("connected", () => {
 
 // 1. Find all the vampires that that are females
 
-Vampires.find({gender:"f"}, (err, response) => {
-	console.log(response); 
-});
+// Vampires.find({gender:"f"}, (err, response) => {
+// 	console.log(response); 
+// });
 
 // 2. Have greater than 500 victims
 
-Vampires.find({victims:{$gt:500}}, (err, response) => {
-	console.log(response);
-});
+// Vampires.find({victims:{$gt:500}}, (err, response) => {
+// 	console.log(response);
+// });
 
 // 3. Have fewer than or equal to 150 victims
-Vampires.find({victims:{$lte:150}}, (err, response) => {
-	console.log(response);
-});
+// Vampires.find({victims:{$lte:150}}, (err, response) => {
+// 	console.log(response);
+// });
 
 // 4.  Have a victim count is not equal to 210234
-Vampires.find({victims:{$ne:210234}}, (err, response) => {
-	console.log(response);
-});
+// Vampires.find({victims:{$ne:210234}}, (err, response) => {
+// 	console.log(response);
+// });
 
 // 5. Have greater than 150 AND fewer than 500 victims
-Vampires.find({victims:{$gt:150, $lt:500}}, (err, response) => {
-	console.log(response);
-})
+// Vampires.find({victims:{$gt:150, $lt:500}}, (err, response) => {
+// 	console.log(response);
+// })
 
 
 /////////////////////////////////////////////////
 // ### Select by exists or does not exist
+
+// 1. have a title property
+// Vampires.find({title: {$exists:true}}, (res, response) => {
+// 	console.log(response);
+// })
+
+// 2. Do not have a victims property
+// Vampires.find({victims: {$exists:false}}, (res, response) => {
+// console.log(response);
+// });
+// 3. Have a title AND no victims
+// Vampires.find({title:{$exists:true}, victims: {$exists:false}}, (res, response) => {
+// 	console.log(response);
+// });
+
+// 4. Have victims AND the victims they have are greater than 1000
+Vampires.find({victims:{$exists:true, $gt:1000}}, (res, response) => {
+	console.log(response);
+});
 
 /////////////////////////////////////////////////
 // ### Select with OR
