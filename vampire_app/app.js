@@ -152,21 +152,62 @@ app.on("connected", () => {
 
 // 2. Love brooding or being tragic
 
-// Vampires.find({$or:[{loves:{$in:["brooding", "being tragic"]}}]}, (err, response) => {
-// 	console.log(response);
-// })
+// Vampires.find( { loves: { $in: ['brooding', 'being tragic'] } },
+//     (err,response) => {
+//         console.log(response);
+//         app.close();
+//     }
+// );
 
 // 3. Have more than 1000 victims or love marshmallows
+
 // Vampires.find({$or:[{loves:{$in:["marshmallows"]}}, {victims:{$gt:1000}}]}, (err, response) => {
 // 	console.log(response);
 // })
+
 // 4. Have red hair or green eyes
+
 // Vampires.find({$or: [{hair_color:"red"}, {eyes_color:"green"}]}, (err, response) => {
 // 	console.log(response);
 // })
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
+
+
+// Select all the vampires that:
+
+// 1. love either frilly shirtsleeves or frilly collars
+// Vampires.find( { loves: { $in: ['frilly shirtsleeves', 'frilly collars'] } },
+//     (err,response) => {
+//         console.log(response);
+//         app.close();
+//     }
+// );
+
+
+// 2. love brooding
+// Vampires.find( { loves: { $in: ['brooding'] } },
+//     (err,response) => {
+//         console.log(response);
+//         app.close();
+//     }
+// );
+
+// love at least one of the following: appearing innocent, trickery, lurking in rotting mansions, R&B music
+// Vampires.find( { loves: { $in: ['appearing innocent', 'trickery', 'lurking in rotting mansions', 'R&B music'] } },
+//     (err,response) => {
+//         console.log(response);
+//         app.close();
+//     }
+// );
+// love fancy cloaks but not if they also love either top hats or virgin blood * Hint-You will also have to use $nin *
+// Vampires.find( { loves: { $in: ['fancy cloaks'], $nin: ['top hats', 'virgin blood']}}, (err, response) => {
+//     console.log(response);
+//     app.close();
+// });
+
+
 
 /////////////////////////////////////////////////
 //### Negative Selection
