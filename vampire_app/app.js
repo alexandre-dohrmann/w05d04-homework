@@ -136,12 +136,34 @@ app.on("connected", () => {
 // });
 
 // 4. Have victims AND the victims they have are greater than 1000
-Vampires.find({victims:{$exists:true, $gt:1000}}, (res, response) => {
-	console.log(response);
-});
+// Vampires.find({victims:{$exists:true, $gt:1000}}, (res, response) => {
+// 	console.log(response);
+// });
 
 /////////////////////////////////////////////////
 // ### Select with OR
+// Select all the vampires that:
+
+// 1. Are from New York, New York, US or New Orleans, Louisiana, US
+
+// Vampires.find({$or: [{location: "New York, New York, US"}, {location: "New Orleans, Louisiana, US"}]}, (err, response) => {
+// 	console.log(response);
+// })
+
+// 2. Love brooding or being tragic
+
+// Vampires.find({$or:[{loves:{$in:["brooding", "being tragic"]}}]}, (err, response) => {
+// 	console.log(response);
+// })
+
+// 3. Have more than 1000 victims or love marshmallows
+// Vampires.find({$or:[{loves:{$in:["marshmallows"]}}, {victims:{$gt:1000}}]}, (err, response) => {
+// 	console.log(response);
+// })
+// 4. Have red hair or green eyes
+// Vampires.find({$or: [{hair_color:"red"}, {eyes_color:"green"}]}, (err, response) => {
+// 	console.log(response);
+// })
 
 /////////////////////////////////////////////////
 //### Select objects that match one of several values
