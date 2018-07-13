@@ -212,6 +212,30 @@ app.on("connected", () => {
 /////////////////////////////////////////////////
 //### Negative Selection
 
+// 1. Love ribbons but do not have brown eyes
+// Vampires.find( { loves: { $in: ['ribbons']}, eye_color: {$not: {$eq: "brown"}}}, (err, response) => {
+//     console.log(response);
+//     app.close();
+// });
+
+// 2. Are not from Rome
+// Vampires.find({location: {$not: {$eq: "Rome"}}}, (err, response) => {
+// 	console.log(response);
+// 	app.close();
+// })
+
+// 3. Do not love any of the following: [fancy cloaks, frilly shirtsleeves, appearing innocent, being tragic, brooding]
+// Vampires.find( { loves: { $nin: ['fancy cloaks', 'frilly shirtsleeves', 'appearing innocent', 'being tragic', 'brooding' ]}}, (err, response) => {
+//     console.log(response);
+//     app.close();
+// });
+
+// 4. Have not killed more than 200 people
+// Vampires.find({victims: {$not: {$gt: 200 }}}, (err, response) => {
+// 	console.log(response);
+// 	app.close();
+// })
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // ## REPLACE
